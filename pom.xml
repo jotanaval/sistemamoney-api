@@ -54,21 +54,21 @@
 			<groupId>com.fasterxml.jackson.datatype</groupId>
 			<artifactId>jackson-datatype-jsr310</artifactId>
 		</dependency>
-		
+
 		<!-- Essabiblioteca serve para mostrar os erros no log do servidor -->
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-lang3</artifactId>
 			<version>3.4</version>
 		</dependency>
-		
-	  <!-- hibernate-jmodel -->
-	  <dependency>
-	  	<groupId>org.hibernate</groupId>
-	    <artifactId>hibernate-jpamodelgen</artifactId>
-	    
-	  </dependency>
-		
+
+		<!-- hibernate-jmodel -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-jpamodelgen</artifactId>
+
+		</dependency>
+
 		<!-- Migrações flyway -->
 		<dependency>
 			<groupId>org.flywaydb</groupId>
@@ -76,9 +76,8 @@
 		</dependency>
 
 		<dependency>
-			<groupId>org.postgresql</groupId>
-			<artifactId>postgresql</artifactId>
-			<scope>runtime</scope>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
 		</dependency>
 		<!-- dependencias do spring security -->
 		<dependency>
@@ -95,11 +94,11 @@
 			<artifactId>spring-security-jwt</artifactId>
 		</dependency>
 
-		<dependency> 
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-configuration-processor</artifactId>
 			<optional>true</optional>
-		</dependency> 
+		</dependency>
 	</dependencies>
 
 	<build>
