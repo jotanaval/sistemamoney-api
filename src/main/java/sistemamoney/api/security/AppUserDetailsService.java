@@ -16,6 +16,7 @@ import org.springframework.stereotype.Service;
 
 import sistemamoney.api.model.Usuario;
 import sistemamoney.api.repository.UsuarioRepository;
+import sistemamoney.api.security.util.UsuarioSistema;
 @Service
 public class AppUserDetailsService  implements UserDetailsService{
 	
@@ -24,11 +25,9 @@ public class AppUserDetailsService  implements UserDetailsService{
 
 	@Override
 	public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
-		
 		Optional<Usuario> usuarioOptional = usuarioRepository.findByEmail(email);
 		Usuario usuario = usuarioOptional.orElseThrow( ()-> new UsernameNotFoundException("Usuario e/ou senha incorretos"));
-		
-		return new User(email, usuario.getSenha(), getPermissao(usuario));
+		return new UsuarioSistema(usuario, getPermissao(usuario));
 	}
 
 	private Collection<? extends GrantedAuthority> getPermissao(Usuario usuario) {
