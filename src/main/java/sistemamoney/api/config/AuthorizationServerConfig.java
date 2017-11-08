@@ -25,7 +25,7 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 	
 	@Autowired
 	private AuthenticationManager authenticationManager;
-
+//so para subir no git 
 	@Override
 	public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
 		clients.inMemory() // pode ser em jdbc 
