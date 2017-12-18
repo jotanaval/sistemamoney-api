@@ -1,12 +1,12 @@
 package sistemamoney.api.resource;
 
-import java.util.List;
-
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -23,6 +23,7 @@ import org.springframework.web.bind.annotation.RestController;
 import sistemamoney.api.event.RecursoCriadoEvent;
 import sistemamoney.api.model.Pessoa;
 import sistemamoney.api.repository.PessoaRepository;
+import sistemamoney.api.repository.filter.PessoaFilter;
 import sistemamoney.api.service.PessoaService;
 
 
@@ -39,6 +40,13 @@ public class PessoaResource {
 	@Autowired
 	private ApplicationEventPublisher publisher;
 	
+	@GetMapping
+	@PreAuthorize("hasAuthority('ROLE_PESQUISAR_CATEGORIA')and #oauth2.hasScoped('read')")
+	public Page<Pessoa>pesquisar(PessoaFilter pessoaFilter, Pageable pageable ){
+		return pessoaRepository.filtrar(pessoaFilter, pageable);
+		
+	}
+	
 	@PostMapping
 	@PreAuthorize("hasAuthority('ROLE_CADASTRAR_CATEGORIA')and #oauth2.hasScoped('write')")
 	public ResponseEntity<Pessoa> criar(@Valid@RequestBody Pessoa pessoa,HttpServletResponse response ){
@@ -53,11 +61,11 @@ public class PessoaResource {
 		return pessoaRepository.findOne(codigo);
 	}
 	
-	@GetMapping
-	@PreAuthorize("hasAuthority('ROLE_PESQUISAR_CATEGORIA')and #oauth2.hasScoped('read')")
-	public List<Pessoa>listar(){
-		return this.pessoaRepository.findAll();
-	}
+//	@GetMapping
+//	@PreAuthorize("hasAuthority('ROLE_PESQUISAR_CATEGORIA')and #oauth2.hasScoped('read')")
+//	public List<Pessoa>listar(){
+//		return this.pessoaRepository.findAll();
+//	}
 	
 	@DeleteMapping("/{codigo}")
 	@PreAuthorize("hasAuthority('ROLE_CADASTRAR_CATEGORIA')and #oauth2.hasScoped('write')")

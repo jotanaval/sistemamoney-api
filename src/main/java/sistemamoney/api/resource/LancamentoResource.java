@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -55,12 +56,12 @@ public class LancamentoResource {
 	 * @return
 	 */
 	@GetMapping
-	@PreAuthorize("hasAuthority('ROLE_PESQUISAR_CATEGORIA')and #oauth2.hasScoped('read')")
+	@PreAuthorize("hasAuthority('ROLE_PESQUISAR_LANCAMENTO')and #oauth2.hasScoped('read')")
 	public Page<Lancamento>pesquisar(LancamentoFilter lancamentoFilter, Pageable pageable){
 		return lancamentoRepository.filtrar(lancamentoFilter, pageable);
 	}
 	@GetMapping(params = "resumo")
-	@PreAuthorize("hasAuthority('ROLE_PESQUISAR_CATEGORIA')and #oauth2.hasScoped('read')")
+	@PreAuthorize("hasAuthority('ROLE_PESQUISAR_LANCAMENTO')and #oauth2.hasScoped('read')")
 	public Page<ResumoLancamento>resumir(LancamentoFilter lancamentoFilter, Pageable pageable){
 		return lancamentoRepository.resumir(lancamentoFilter, pageable);
 	}
@@ -70,13 +71,13 @@ public class LancamentoResource {
 	 * @return
 	 */
 	@GetMapping("/{codigo}")
-	@PreAuthorize("hasAuthority('ROLE_PESQUISAR_CATEGORIA')and #oauth2.hasScoped('read')")
+	@PreAuthorize("hasAuthority('ROLE_PESQUISAR_LANCAMENTO')and #oauth2.hasScoped('read')")
 	public Lancamento buscarPorCodigo(@PathVariable Long  codigo) {
 		return lancamentoRepository.findOne(codigo);
 	}
 	
 	@DeleteMapping("/{codigo}")
-	@PreAuthorize("hasAuthority('ROLE_CADASTRAR_CATEGORIA')and #oauth2.hasScoped('write')")
+	@PreAuthorize("hasAuthority('ROLE_CADASTRAR_LANCAMENTO)and #oauth2.hasScoped('write')")
 	public void remover(@PathVariable Long codigo) {
 		this.lancamentoService.remover(codigo);
 		
@@ -90,13 +91,24 @@ public class LancamentoResource {
 	 * @return
 	 */
 	@PostMapping
-	@PreAuthorize("hasAuthority('ROLE_CADASTRAR_CATEGORIA')and #oauth2.hasScoped('write')")
+	@PreAuthorize("hasAuthority('ROLE_CADASTRAR_LANCAMENTO')and #oauth2.hasScoped('write')")
 	public ResponseEntity<Lancamento>criar(@Valid @RequestBody Lancamento lancamento, HttpServletResponse response ){
 		
 		Lancamento lancamentosalvo = this.lancamentoService.salvar(lancamento);
 		publisher.publishEvent(new RecursoCriadoEvent(this, response, lancamentosalvo.getCodigo()));		
 		return ResponseEntity.status(HttpStatus.CREATED).body(lancamentosalvo);
 		
+	}
+	@PutMapping("/{codigo}")
+	@PreAuthorize("hasAuthority('ROLE_CADASTRAR_LANCAMENTO')and #oauth2.hasScoped('write')")
+	public ResponseEntity<Lancamento>atualizar(@PathVariable Long codigo, @Valid@RequestBody Lancamento lancamento){
+		try {
+				Lancamento lancamentoSalvo = lancamentoService.atualizar(codigo, lancamento);
+				return ResponseEntity.ok(lancamento);
+			
+		} catch (IllegalArgumentException e) {
+			return ResponseEntity.notFound().build();
+		}
 	}
 	
 	/**
