@@ -26,6 +26,11 @@ import sistemamoney.api.config.property.SistemamoneyApiProperty;
  *
  */
 
+/**
+ * @author junior
+ * GitHub : jotanaval
+ * email: jotanaval2009@gmail.com
+ */
 @ControllerAdvice
 public class RefreshTokenPostProcessor implements ResponseBodyAdvice<OAuth2AccessToken> {
 

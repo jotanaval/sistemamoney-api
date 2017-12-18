@@ -9,10 +9,15 @@ import sistemamoney.api.repository.filter.LancamentoFilter;
 
 /**
  * A classe deve possuir esse nome,LancamentoRepositoryQuery, para que o spring data reconheça
- * @author junior
+ * 
  *
  */
 
+/**
+ * @author junior
+ * GitHub : jotanaval
+ * email: jotanaval2009@gmail.com
+ */
 public interface LancamentoRepositoryQuery {
 		
 	public Page<Lancamento> filtrar(LancamentoFilter lancamentoFilter, Pageable pageable);

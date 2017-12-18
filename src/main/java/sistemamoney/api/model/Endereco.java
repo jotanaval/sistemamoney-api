@@ -2,6 +2,11 @@ package sistemamoney.api.model;
 
 import javax.persistence.Embeddable;
 
+/**
+ * @author junior
+ * GitHub : jotanaval
+ * email: jotanaval2009@gmail.com
+ */
 @Embeddable
 public class Endereco {
 	

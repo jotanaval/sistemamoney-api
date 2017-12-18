@@ -7,6 +7,11 @@ import org.springframework.security.core.userdetails.User;
 
 import sistemamoney.api.model.Usuario;
 
+/**
+ * @author junior
+ * GitHub : jotanaval
+ * email: jotanaval2009@gmail.com
+ */
 public class UsuarioSistema  extends User{
 	
 	private static final long serialVersionUID = 1L;

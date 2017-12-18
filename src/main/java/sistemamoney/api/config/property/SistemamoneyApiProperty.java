@@ -2,6 +2,12 @@ package sistemamoney.api.config.property;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
+
+/**
+ * @author junior
+ * GitHub : jotanaval
+ * email: jotanaval2009@gmail.com
+ */
 @ConfigurationProperties("sistemamoney")
 public class SistemamoneyApiProperty {
 

@@ -35,6 +35,11 @@ import sistemamoney.api.repository.ResumoLancamento;
 import sistemamoney.api.repository.filter.LancamentoFilter;
 import sistemamoney.api.service.LancamentoService;
 
+/**
+ * @author junior
+ * GitHub : jotanaval
+ * email: jotanaval2009@gmail.com
+ */
 @RestController
 @RequestMapping("/lancamentos")
 public class LancamentoResource {

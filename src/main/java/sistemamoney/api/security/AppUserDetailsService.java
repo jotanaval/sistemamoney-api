@@ -17,6 +17,11 @@ import org.springframework.stereotype.Service;
 import sistemamoney.api.model.Usuario;
 import sistemamoney.api.repository.UsuarioRepository;
 import sistemamoney.api.security.util.UsuarioSistema;
+/**
+ * @author junior
+ * GitHub : jotanaval
+ * email: jotanaval2009@gmail.com
+ */
 @Service
 public class AppUserDetailsService  implements UserDetailsService{
 	

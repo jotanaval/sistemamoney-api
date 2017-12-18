@@ -10,6 +10,11 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import sistemamoney.api.event.RecursoCriadoEvent;
 
+/**
+ * @author junior
+ * GitHub : jotanaval
+ * email: jotanaval2009@gmail.com
+ */
 @Component
 public class RecursoCriadoListener  implements ApplicationListener<RecursoCriadoEvent>{
 

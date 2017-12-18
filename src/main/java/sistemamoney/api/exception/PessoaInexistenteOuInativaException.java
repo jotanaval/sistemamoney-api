@@ -4,6 +4,11 @@ package sistemamoney.api.exception;
  * @author junior
  *
  */
+/**
+ * @author junior
+ * GitHub : jotanaval
+ * email: jotanaval2009@gmail.com
+ */
 public class PessoaInexistenteOuInativaException extends RuntimeException {
 
 	private static final long serialVersionUID = 1L;

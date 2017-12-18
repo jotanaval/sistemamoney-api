@@ -12,6 +12,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 import sistemamoney.api.config.property.SistemamoneyApiProperty;
 
+/**
+ * @author junior
+ * GitHub : jotanaval
+ * email: jotanaval2009@gmail.com
+ */
 @RestController
 @RequestMapping("/tokens")
 public class TokenResource {

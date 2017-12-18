@@ -10,6 +10,11 @@ import sistemamoney.api.model.Pessoa;
 import sistemamoney.api.repository.LancamentoRepository;
 import sistemamoney.api.repository.PessoaRepository;
 
+/**
+ * @author junior
+ * GitHub : jotanaval
+ * email: jotanaval2009@gmail.com
+ */
 @Service
 public class LancamentoService {
 	

@@ -26,8 +26,11 @@ import sistemamoney.api.repository.PessoaRepository;
 import sistemamoney.api.repository.filter.PessoaFilter;
 import sistemamoney.api.service.PessoaService;
 
-
-
+/**
+ * @author junior
+ * GitHub : jotanaval
+ * email: jotanaval2009@gmail.com
+ */
 @RestController
 @RequestMapping("/pessoas")
 public class PessoaResource {

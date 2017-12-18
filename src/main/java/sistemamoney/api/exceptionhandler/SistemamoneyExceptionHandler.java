@@ -24,6 +24,11 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 
 
 
+/**
+ * @author junior
+ * GitHub : jotanaval
+ * email: jotanaval2009@gmail.com
+ */
 @ControllerAdvice // essa anotação serve para que este controle observe toda a aplicação
 public class SistemamoneyExceptionHandler extends ResponseEntityExceptionHandler {
 	

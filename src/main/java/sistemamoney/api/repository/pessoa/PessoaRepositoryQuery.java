@@ -12,6 +12,11 @@ import sistemamoney.api.repository.filter.PessoaFilter;
  *
  */
 
+/**
+ * @author junior
+ * GitHub : jotanaval
+ * email: jotanaval2009@gmail.com
+ */
 public interface PessoaRepositoryQuery {
 	
 	public Page<Pessoa> filtrar(PessoaFilter pessoaFilter, Pageable pageable);

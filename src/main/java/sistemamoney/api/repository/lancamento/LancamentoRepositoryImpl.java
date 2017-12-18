@@ -30,6 +30,11 @@ import sistemamoney.api.repository.filter.LancamentoFilter;
  * @author junior
  *
  */
+/**
+ * @author junior
+ * GitHub : jotanaval
+ * email: jotanaval2009@gmail.com
+ */
 public class LancamentoRepositoryImpl implements LancamentoRepositoryQuery {
 
 	@PersistenceContext

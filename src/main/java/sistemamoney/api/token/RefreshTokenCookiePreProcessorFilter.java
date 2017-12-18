@@ -19,6 +19,11 @@ import org.springframework.core.annotation.Order;
 
 import org.springframework.stereotype.Component;
 
+/**
+ * @author junior
+ * GitHub : jotanaval
+ * email: jotanaval2009@gmail.com
+ */
 @Component
 @Order(Ordered.HIGHEST_PRECEDENCE)
 public class RefreshTokenCookiePreProcessorFilter implements Filter {

@@ -10,6 +10,11 @@ import org.springframework.security.oauth2.provider.token.TokenEnhancer;
 
 import sistemamoney.api.security.util.UsuarioSistema;
 
+/**
+ * @author junior
+ * GitHub : jotanaval
+ * email: jotanaval2009@gmail.com
+ */
 public class CustomTokenEnhancer implements TokenEnhancer {
 
 	@Override

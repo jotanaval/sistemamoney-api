@@ -17,6 +17,11 @@ import org.springframework.stereotype.Component;
 
 import sistemamoney.api.config.property.SistemamoneyApiProperty;
 
+/**
+ * @author junior
+ * GitHub : jotanaval
+ * email: jotanaval2009@gmail.com
+ */
 @Component
 @Order
 public class CorsFilter implements Filter{

@@ -19,6 +19,11 @@ import org.springframework.util.StringUtils;
 import sistemamoney.api.model.Pessoa;
 import sistemamoney.api.repository.filter.PessoaFilter;
 
+/**
+ * @author junior
+ * GitHub : jotanaval
+ * email: jotanaval2009@gmail.com
+ */
 public class PessoaRepositoryImpl implements PessoaRepositoryQuery{
 	
 	@PersistenceContext

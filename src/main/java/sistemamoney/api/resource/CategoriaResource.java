@@ -21,6 +21,11 @@ import sistemamoney.api.event.RecursoCriadoEvent;
 import sistemamoney.api.model.Categoria;
 import sistemamoney.api.repository.CategoriaRepository;
 
+/**
+ * @author junior
+ * GitHub : jotanaval
+ * email: jotanaval2009@gmail.com
+ */
 @RestController
 @RequestMapping("/categorias")
 public class CategoriaResource {

@@ -5,6 +5,11 @@ import java.time.LocalDate;
 
 import sistemamoney.api.model.TipoLancamento;
 
+/**
+ * @author junior
+ * GitHub : jotanaval
+ * email: jotanaval2009@gmail.com
+ */
 public class ResumoLancamento {
 	
 	private Long codigo;

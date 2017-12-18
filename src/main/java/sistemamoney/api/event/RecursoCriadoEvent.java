@@ -4,6 +4,11 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.context.ApplicationEvent;
 
+/**
+ * @author junior
+ * GitHub : jotanaval
+ * email: jotanaval2009@gmail.com
+ */
 public class RecursoCriadoEvent extends ApplicationEvent{
 
 	/**
